@@ -13,6 +13,7 @@
   with_items:
     - httpd
     - nc
+    - php
 
 - name: copy html
   copy:
