@@ -1,0 +1,5 @@
+- name: exam tasks
+  hosts: all 
+  become: true
+  roles:
+    - exam_tasks

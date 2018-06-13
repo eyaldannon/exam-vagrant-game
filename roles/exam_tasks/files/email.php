@@ -1,0 +1,38 @@
+<?php
+// the message
+$msg = "Step3: The ssh is on port 30122\n\n 
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAx/9HBR2yVyC1fQyp5ZIuq473X7ksg9w1zfa3E3GhRM4cB9kn
+tqnhJM4ajZuJ8LwgUaXgaclflRwzmMqJweRSq9iuLmqPaBhGp//7/5S4gKuzqiCX
+mlpEg7xmY2bE32t7X6WatuQYqgT5UOUm+hUiiQ4Up937C4YqmR0SWgUfTgm07T15
+0K4xWgEOMNsO3bRDK1VvLYSvMmU0ByiSbD9zgTPm9nm1EY3QDqRp3X7sqI3r12Vc
+2iZy8AMQTc8SHWYfSsuckBw3lP/ULvnHFbh+AUt4DDj23h2i03aCsXzR7NF64DSN
+fnMyZsRxJcC7+JP0RRAQNK4jq4+KmdZjb2RuGwIDAQABAoIBAETd82+gjTORUM1R
+mgMyNh3fKfFtSxXQszpL9TidzSFrM53EOfedQaixy9TtNS+PKDXVP5RNwjsPLfkz
+7QG2BH2mLDxRdzYp/dKFxBl69ZlhBonTlUCSSrtuGXerAKnKUf5agQ7vNkr9UXh4
+n9ZHhs/Y6GXxeyu5tFtq9lHHJ8Nv2gD5PbbQKJJRmeu2HWs2kvQwvcYcUZnFLg/6
+YF0TSCnnKJ5FKvctVdz908/b5Qso3PUAG/OnDlojmUsK8UNfA9nxEpw2VH6CwuWV
+gPY4/G8RaE2iLto0jlKCESQJ+3rnL+ZVPi62GvD5pEFQcoUkslhvb0DSiUkbbDYM
+/f/EqdECgYEA8xLzeIN/NkKLjuor5pPyGyuvOcSVBf2/r3op/YqfmQX4qDP6njVV
+W11jHv82J5uxqC4bY4GciA4XeHHpoPc2eozVTsXEeZXF71wCdXI1X3XNeE5hBMR8
+Cr5APySTjXe0N/d2rzX29Cm4K0lKQnNL3SfcpNrnOgKqaVhzRZTbB1MCgYEA0qHo
+GTyZnCvGLEel5jG7XuIxPbckAWST0rKg/V2kGs+jcfkY98vkonNMMj55LPjT9YxN
+5kpnboQbIYimvYCGzAP0mJQBc6ONakJ2MgDftoIrUdlV+7z1HSt/nj6XQXmtqU42
+TTpb2T3wAEQpYfyJ4UM6epUwGroBTgZZx6oojRkCgYB7Ga/f6oh0TEMtP364KVjF
+VdxJ3zqxbA61qaK2Wov1DUceuCRGFzCBMsxOGGWurXTNfXw1aqCBbtGIF/h/onMe
+oVAtso6MHMO/MtOz8wEAtUI3mUodBfzj2/HhiH6JeIP2jAa5ORU2FiLFGTrYaFeV
+Sui9PHc5s7vl2fuW04oRLQKBgGwEfeubSUdup3WD1M9FR8q0Av6cUgmo06ok0yy7
+/fGF9FL5pNVHKdwpdrT5ltj6TnDJYBWuqHZjpyo+Uwwxwm8TxDcPB+OOx3Hr3YNt
+MUz+WkriQxcTYzxvV0YG4TjBts5xfqWCPSIeglsQmYxXnzn3aSD+Kyo5o3upBBfB
+6oPZAoGAPLQbmG+qmb2EsKEtAnvbtP6AbozVLWM9FpDX5XokWnmUEdX1npPXeK1O
+/mfBfH7WrOXk+8kFOjolDj8uu0k2lw/JwkAddExc7H0CUqSJ/96LBCldfR1hzHby
+RYC4N6eqfk1ChL04/Qvors10MhCcC866b8azyrdRsvkVJW7Vd0w=
+-----END RSA PRIVATE KEY-----
+";
+
+// use wordwrap() if lines are longer than 70 characters
+$msg = wordwrap($msg,70);
+
+// send email
+mail("example@example.com","My subject",$msg);
+?>
