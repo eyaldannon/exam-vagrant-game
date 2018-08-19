@@ -15,12 +15,15 @@
     - nc
     - php
 
+- name: Clear repos
+  file:
+    state: absent
+    path: "/etc/yum.repos.d/"
+
 - name: copy html
   copy:
     src: index.html
     dest: /var/www/html/
-  notify:
-    - "Restart httpd"
 
 - name: change ssh port
   lineinfile:
@@ -62,6 +65,13 @@
   become: yes
   become_method: "sudo"
 
+- name: Allow 'wheel' group to have passwordless sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^centos'
+    line: 'centos ALL=(ALL) NOPASSWD: ALL'
+
 - name: Set up authorized keys for the centos user
   authorized_key: user=centos key="{{item}}"
   with_file:
@@ -75,7 +85,13 @@
 - name: run another_es_poop
   shell: "nohup bash /tmp/another_es_poop.sh </dev/null >/dev/null 2>&1 &"
 
+- name: Restart httpd
+  service:
+    name: httpd
+    state: restarted
+
 - name: Restart ssh
   service:
     name: sshd
     state: restarted
+
